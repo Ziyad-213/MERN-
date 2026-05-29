@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Question Bank \u2013 All Units</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fdf8f0;
+    --accent: #c0392b;
+    --accent2: #2980b9;
+    --accent3: #27ae60;
+    --rule: #e0d5c5;
+    --code-bg: #1e2235;
+    --code-text: #e8eaf6;
+    --highlight: #fff3cd;
+    --section-colors: #c0392b, #2980b9, #27ae60, #8e44ad, #e67e22, #16a085;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  /* \u2500\u2500 COVER \u2500\u2500 */
+  .cover {
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,.02) 40px, rgba(255,255,255,.02) 80px);
+  }
+  .cover-badge {
+    display: inline-block;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .cover h1 span { color: var(--accent); }
+  .cover-sub {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: .7;
+    margin-bottom: 40px;
+  }
+  .cover-units {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    justify-content: center; margin-top: 36px;
+  }
+  .cover-unit {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+
+  /* \u2500\u2500 TOC \u2500\u2500 */
+  .toc {
+    max-width: 860px; margin: 60px auto; padding: 0 32px;
+  }
+  .toc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 700;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 8px; margin-bottom: 24px;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li {
+    display: flex; justify-content: space-between; align-items: baseline;
+    border-bottom: 1px dotted var(--rule); padding: 8px 0;
+    font-size: .95rem;
+  }
+  .toc-list li a { text-decoration: none; color: var(--ink); font-weight: 600; }
+  .toc-list li a:hover { color: var(--accent); }
+  .toc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .8rem; color: #999;
+  }
+
+  /* \u2500\u2500 UNIT SECTION \u2500\u2500 */
+  .unit {
+    max-width: 860px; margin: 0 auto; padding: 60px 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .unit-header {
+    display: flex; align-items: flex-start; gap: 20px;
+    margin-bottom: 48px;
+  }
+  .unit-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem; font-weight: 900; line-height: 1;
+    opacity: .12; flex-shrink: 0;
+  }
+  .unit-meta { flex: 1; }
+  .unit-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block; margin-bottom: 8px;
+  }
+  .unit h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; line-height: 1.2;
+  }
+
+  /* \u2500\u2500 QUESTION \u2500\u2500 */
+  .question {
+    margin-bottom: 52px;
+    padding-left: 20px;
+    border-left: 3px solid var(--rule);
+    transition: border-color .2s;
+  }
+  .question:hover { border-left-color: var(--accent); }
+  .q-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #999; letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .question h3 {
+    font-size: 1.1rem; font-weight: 600;
+    margin-bottom: 12px; color: var(--ink);
+  }
+  .question p, .question li {
+    font-size: .97rem; margin-bottom: 10px;
+  }
+  .question ul, .question ol {
+    padding-left: 24px; margin-bottom: 12px;
+  }
+  .question li { margin-bottom: 4px; }
+
+  /* \u2500\u2500 CODE \u2500\u2500 */
+  pre {
+    background: var(--code-bg);
+    color: var(--code-text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .82rem;
+    line-height: 1.7;
+    padding: 20px 24px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 16px 0;
+    position: relative;
+  }
+  pre::before {
+    content: attr(data-lang);
+    position: absolute; top: 8px; right: 14px;
+    font-size: 10px; opacity: .4; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  code:not(pre code) {
+    background: #f0e8d8;
+    padding: 2px 6px; border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .85em;
+    color: var(--accent);
+  }
+
+  /* syntax colours */
+  .kw  { color: #c792ea; }
+  .fn  { color: #82aaff; }
+  .st  { color: #c3e88d; }
+  .cm  { color: #546e7a; font-style: italic; }
+  .nm  { color: #f78c6c; }
+  .op  { color: #89ddff; }
+  .cls { color: #ffcb6b; }
+
+  /* \u2500\u2500 CALLOUT \u2500\u2500 */
+  .callout {
+    background: var(--highlight);
+    border-left: 4px solid #f39c12;
+    padding: 14px 18px; border-radius: 0 4px 4px 0;
+    margin: 16px 0; font-size: .93rem;
+  }
+  .callout strong { color: #e67e22; }
+
+  /* \u2500\u2500 TABLE \u2500\u2500 */
+  table {
+    width: 100%; border-collapse: collapse;
+    margin: 16px 0; font-size: .9rem;
+  }
+  th {
+    background: var(--ink); color: #fff;
+    padding: 10px 14px; text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .8rem; letter-spacing: .5px;
+  }
+  td { padding: 9px 14px; border-bottom: 1px solid var(--rule); }
+  tr:hover td { background: #f9f4ec; }
+
+  /* \u2500\u2500 PRINT \u2500\u2500 */
+  @media print {
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    pre { white-space: pre-wrap; }
+    .question { page-break-inside: avoid; }
+  }
+  @media (max-width: 600px) {
+    .unit { padding: 40px 18px; }
+    pre { font-size: .76rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 COVER -->
+<div class="cover">
+  <div class="cover-badge">Question Bank</div>
+  <h1>Python <span>Programming</span><br>Complete Guide</h1>
+  <div class="cover-sub">All Units \u00b7 Detailed Explanations \u00b7 Code Examples</div>
+  <div class="cover-units">
+    <div class="cover-unit">Unit 1 \u00b7 Basics &amp; Data Structures</div>
+    <div class="cover-unit">Unit 2 \u00b7 OOP &amp; File Handling</div>
+    <div class="cover-unit">Unit 3 \u00b7 Modules &amp; Tools</div>
+    <div class="cover-unit">Unit 4 \u00b7 Flask Framework</div>
+    <div class="cover-unit">Unit 5 \u00b7 Django Framework</div>
+    <div class="cover-unit">Unit 6 \u00b7 RESTful APIs</div>
+  </div>
+</div>
+
+<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 UNIT 1 -->
+<div class="unit" id="unit1">
+  <div class="unit-header">
+    <div class="unit-number">01</div>
+    <div class="unit-meta">
+      <div class="unit-tag" style="background:#c0392b">Unit 1</div>
+      <h2>Python Basics &amp; Data Structures</h2>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="question" id="q1-1">
+    <div class="q-number">Q 1.1</div>
+    <h3>Explain basic programming concepts in Python.</h3>
+    <p>Python is a high-level, interpreted, dynamically-typed programming language. Key concepts include:</p>
+    <ul>
+      <li><strong>Interpreter:</strong> Python executes code line by line at runtime.</li>
+      <li><strong>Indentation:</strong> Python uses indentation (4 spaces) instead of braces to define code blocks.</li>
+      <li><strong>Dynamic Typing:</strong> Variable types are determined at runtime \u2014 no need to declare them.</li>
+      <li><strong>Comments:</strong> Single-line comments use <code>#</code>; multi-line use triple quotes <code>"""..."""</code>.</li>
+      <li><strong>print():</strong> Built-in function to display output.</li>
+      <li><strong>input():</strong> Reads user input as a string.</li>
+    </ul>
+<pre data-lang="python"><span class="cm"># Basic Python program</span>
+name <span class="op">=</span> <span class="fn">input</span>(<span class="st">"Enter your name: "</span>)
+<span class="fn">print</span>(<span class="st">"Hello,"</span>, name)
+
+<span class="cm"># Arithmetic</span>
+a, b <span class="op">=</span> <span class="nm">10</span>, <span class="nm">3</span>
+<span class
