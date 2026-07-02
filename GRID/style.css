@@ -1,0 +1,31 @@
+.main{
+    border:10px solid black;
+    
+    width: 1000px;
+    display: grid;
+    gap: 10px;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: repeat(5, 200px);
+    justify-content: start;
+
+   
+}
+
+.Box{
+    border: 2px solid black;
+    font-size: 20px;
+}
+
+#Box-1{
+   
+    
+grid-row: 1/3;
+    
+} 
+
+
+
+
+
+
+
