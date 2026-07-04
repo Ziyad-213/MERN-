@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+  
 </head>
+
+
 <body>
 
     <h1 style="text-align: center;">Student Registration Form</h1>
+    <form action="#" method="get">
+     
     <label for="first_name">First Name</label>
-    <input type="text" id="first_name" name="first_name" > max 30 character 
+    <input type="text" id="first_name" name="first_name" maxlength="30"> max 30 character 
+  
     <br>
     <br>
     <label for="last_name">Last Name</label>
-    <input type="text" id="last_name" name="last_name" > max 30 character 
+    <input type="text" id="last_name" name="last_name" maxlength="30"> max 30 character 
     <br><br>
 
 
@@ -30,16 +36,16 @@
 
 
     <Label for="phone">Phone Number </Label>
-    <input type="number" name="phone" id="phone"> upto 10 digit
+    <input type="tel" name="phone" id="phone"> upto 10 digit
     <br><br>
     Gender 
     <label for="male">male</label>
-    <input type="radio" name="gender" id="male">
+    <input type="radio" name="gender" id="male" value="male">
     <label for="female">Female</label>
-    <input type="radio" name="gender" id="female" >
+    <input type="radio" name="gender" id="female" value="female">
 
     <br><br>
-    <label for="adress">Adress</label>
+    <label for="adress">Address</label>
     <textarea name="adress" id="adress"></textarea>
     <br><br>
 
@@ -48,9 +54,10 @@
     <br><br>
 
       <label for="pincode">PIN code </label>
-    <input type="number" id="pincode" name="pincode" >digit number
+    <input type="text" id="pincode" name="pincode" maxlength="6" pattern="[0-9]{6}" >digit number
     <br><br>
 
+    <label for="state">State</label>
     <select name="state" id="state">
       <option value="">--Select Your State--</option>
     <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -92,18 +99,64 @@
 
     Hobbies 
     <label for="drawing">Drawing</label>
-    <input type="radio" name="hobby" id="drawing">
+    <input type="checkbox" name="hobby" id="drawing" value="drawing">
 
     <label for="dancing">Dancing</label>
-    <input type="radio" name="hobby" id="dancing">
+    <input type="checkbox" name="hobby" id="dancing" value="dancing">
 
     <label for="swimming">Swimming</label>
-    <input type="radio" name="hobby" id="swimming">
+    <input type="checkbox" name="hobby" id="swimming" value="swimming">
 
     <label for="singing">Singing</label>
-    <input type="radio" name="hobby" id="singing">
+    <input type="checkbox" name="hobby" id="singing" value="singing">
+    <br>
+    <label for="other">other</label>
+    <input type="checkbox" name="hobby" id="other" value="other">
+   <textarea id="other_hobby" name="other_hobby"></textarea>
 
-    
+   <br><br>
+
+   
+   
+  </form>
+  <h3>Qualification</h3>
+
+  <table border="1" cellspacing="0" cellpadding="15">
+
+    <tr>
+      <th>Sr.no</th>
+      <th>Examination</th>
+      <th>Board</th>
+      <th>Percentage</th>
+      <th>year of passing</th>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>Class X</td>
+      <td><input type="text" name="classX"></td>
+      <td><input type="number" name></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Class XI</td>
+      <td><input type="text" name="classXI"></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Class XII</td>
+      <td><input type="text" name="classXII"></td>
+    </tr>
+
+  </table>
+ 
+
+  
+  
+  
+  
+  <input type="submit" value="submit">
+  <input type="reset" value="reset">
 
     
     
