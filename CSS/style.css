@@ -1,0 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap');
+
+body {
+    font-family: "Geist Pixel", sans-serif;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+ul {
+    color:blue;
+    font-size: 20px;
+
+}
+
+li {
+    margin: 10px 0;
+}
