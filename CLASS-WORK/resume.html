@@ -5,15 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+      
         div{
             margin: 10px;
-            border: 5px solid black;
-            width: 150px;
+            /* border: 5px solid black; */
+           
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 0px;
+            right: 30px;
 
         }
+        div img{
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+        }
+        table,
+        th,
+        td,
+        tr{
+            border: 1px solid;
+            border-collapse: collapse;
+           
+            padding: 20px;
+        }
+        th{
+            
+            background-color: rgb(231, 214, 130);
+            text-align: center;
+        }
+
+     
     </style>
   
 </head>
@@ -62,6 +84,41 @@
 <img src="https://cdn-icons-png.flaticon.com/128/2504/2504923.png" alt="linkedin">
 </a>
 </div>
+
+<table>
+    <thead>
+       <tr><th colspan="7" style="text-align: center; background-color: red;">Qualification</th></tr>
+        <tr>
+            <th>SNo.</th>
+            <th>Name.</th>
+            <th>Board.</th>
+            <th>Grade.</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+            <td>1</td>
+            <td>10th</td>
+            <td>CBSE</td>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>12th</td>
+            <td>CBSE</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>B.tech</td>
+            <td>PU</td>
+            <td>A</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr><td colspan="7">This table contains the educational records</td></tr>
+    </tfoot>
+</table>
     
 </body>
 </html>
