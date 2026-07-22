@@ -25,9 +25,11 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   border: 8px solid black;
+  overflow-x: scroll;
 }
 
 .grid-items {
+  
   display: flex;
   justify-content: center;
   align-items: center;
